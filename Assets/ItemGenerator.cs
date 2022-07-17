@@ -16,6 +16,7 @@ public class ItemGenerator : MonoBehaviour
     private int goalPos = 360;
     //アイテムを出すx方向の範囲
     private float posRange = 3.4f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,7 @@ public class ItemGenerator : MonoBehaviour
                 //コーンをx軸方向に一直線に生成
                 for (float j = -1; j <= 1; j += 0.4f)
                 {
-                    GameObject cone = Instantiate (conePrefab);
+                    GameObject cone = Instantiate (conePrefab) as GameObject;
                     cone.transform.position = new Vector3 (4 * j, cone.transform.position.y, i);
                 }
             }
@@ -47,13 +48,13 @@ public class ItemGenerator : MonoBehaviour
                     if (1 <= item && item <= 6)
                     {
                         //コインを生成
-                        GameObject coin = Instantiate (coinPrefab);
+                        GameObject coin = Instantiate (coinPrefab) as GameObject;
                         coin.transform.position = new Vector3 (posRange * j, coin.transform.position.y, i + offsetZ);
                     }
                     else if (7 <= item && item <= 9)
                     {
                         //車を生成
-                        GameObject car = Instantiate (carPrefab);
+                        GameObject car = Instantiate (carPrefab) as GameObject;
                         car.transform.position = new Vector3 (posRange * j, car.transform.position.y, i + offsetZ);
                     }
                 }
@@ -64,6 +65,6 @@ public class ItemGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
