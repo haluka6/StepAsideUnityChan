@@ -544,6 +544,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf34301142004be3aca80d77f07c934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carPrefab: {fileID: 3800343017361136807, guid: 3f05215bde62f4d888be2aa7a3c9a689, type: 3}
+  coinPrefab: {fileID: 8438664391683904676, guid: b1c79a9b68ca8403a9248d0c69f3f8e1, type: 3}
+  conePrefab: {fileID: 7083504478267499743, guid: 75207e6a01cfd43d8bd4eb75f9997130, type: 3}
 --- !u!199 &244617607
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -6579,7 +6582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2019625020
 MonoBehaviour:
   m_ObjectHideFlags: 0

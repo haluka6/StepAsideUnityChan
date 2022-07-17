@@ -30,6 +30,5 @@ public class DestroyController : MonoBehaviour
     void OnTriggerEnter(Collider collider)
     {
         Destroy(collider.gameObject);
-        print("消す");
     }
 }
