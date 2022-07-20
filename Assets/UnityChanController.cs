@@ -134,57 +134,6 @@ public class UnityChanController : MonoBehaviour
 
         //Unityちゃんに速度を与える
         this.myRigidbody.velocity = new Vector3 (inputVelocityX , inputVelocityY , velocityZ);
-
-
-
-
-
-        //unitychanの距離で作成する---------------------------------------------------------------------------------------------
-        if (this.transform.position.z - startPos >= 15 && this.transform.position.z < goalPos - 15)
-        {
-            //基準距離の更新
-            startPos += 15;
-
-            //どのアイテムを出すのかをランダムに設定
-            int num = Random.Range (1, 11);
-            if (num <= 2)
-            {
-                //コーンをx軸方向に一直線に生成
-                for (float j = -1; j <= 1; j += 0.4f)
-                {
-                    GameObject cone = Instantiate (conePrefab) as GameObject;
-                    cone.transform.position = new Vector3 (4 * j, cone.transform.position.y, this.transform.position.z + 50);
-                }
-            }
-            else
-            {
-
-                //レーンごとにアイテムを生成
-                for (int j = -1; j <= 1; j++)
-                {
-                    //アイテムの種類を決める
-                    int item = Random.Range (1, 11);
-                    //アイテムを置くZ座標のオフセットをランダムに設定
-                    int offsetZ = Random.Range(-5, 6);
-                    //60%コイン配置:30%車配置:10%何もなし
-                    if (1 <= item && item <= 6)
-                    {
-                        //コインを生成
-                        GameObject coin = Instantiate (coinPrefab) as GameObject;
-                        coin.transform.position = new Vector3 (posRange * j, coin.transform.position.y, this.transform.position.z + 50 + offsetZ);
-                    }
-                    else if (7 <= item && item <= 9)
-                    {
-                        //車を生成
-                        GameObject car = Instantiate (carPrefab) as GameObject;
-                        car.transform.position = new Vector3 (posRange * j, car.transform.position.y, this.transform.position.z + 50 + offsetZ);
-                    }
-                }
-            }
-        }
-         //unitychanの距離で作成する---------------------------------------------------------------------------------------------
-
-
     }
 
     //トリガーモードで他のオブジェクトと接触した場合の処理
